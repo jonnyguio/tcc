@@ -1,0 +1,1 @@
+# Barreira simples na main thread
