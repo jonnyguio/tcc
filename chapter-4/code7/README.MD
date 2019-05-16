@@ -1,0 +1,1 @@
+# Barreira dentro das gorotinas

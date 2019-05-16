@@ -1,0 +1,1 @@
+# Produtor e consumidor clássico, onde o produtor, dado que tenha espaco no buffer, sempre pode escrever
