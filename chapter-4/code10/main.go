@@ -31,16 +31,16 @@ func main() {
 	A.InitSquared(n, 1000, true)
 	C.InitSquared(n, 0, false)
 
-	fmt.Println("Matrix A:")
+	/*fmt.Println("Matrix A:")
 	A.Print()
 	fmt.Println("Matrix C:")
-	C.Print()
+	C.Print()*/
 
 	start := time.Now()
 	A.Multiply(A, C, parallel)
 	end := time.Now().Sub(start)
 
-	fmt.Println("Result Matric C:")
-	C.Print()
-	fmt.Println("Elapsed time: ", end.String())
+	/*fmt.Println("Result Matric C:")
+	C.Print()*/
+	fmt.Println(end.String())
 }
