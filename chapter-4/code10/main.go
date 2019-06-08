@@ -29,7 +29,9 @@ func main() {
 	// fmt.Println(len(A), len(A), len(C))
 
 	A.InitSquared(n, 1000, true)
+	fmt.Println("finished starting A")
 	C.InitSquared(n, 0, false)
+	fmt.Println("finished starting C")
 
 	/*fmt.Println("Matrix A:")
 	A.Print()

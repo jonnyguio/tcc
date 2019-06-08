@@ -1,3 +1,3 @@
 sample_number,cores,matrix_size,time
-1,2,100,9.759138ms
-2,2,100,11.329385ms
+1,2,100,51.396368ms
+2,2,100,12.317122ms

@@ -67,15 +67,15 @@ func main() {
 	initMatrix(&C, n, 0)
 	// fmt.Println(len(A), len(A), len(C))
 
-	fmt.Println("Matrix A:")
-	printMatrix(A, n)
+	//fmt.Println("Matrix A:")
+	//printMatrix(A, n)
 
-	fmt.Println("Matrix C:")
-	printMatrix(C, n)
+	//fmt.Println("Matrix C:")
+	//printMatrix(C, n)
 	start := time.Now()
 	MultiplyMatrix(A, A, C, n)
 	end := time.Now().Sub(start)
-	fmt.Println("Result Matric C:")
-	printMatrix(C, n)
-	fmt.Println("Elapsed time: ", end.String())
+	//fmt.Println("Result Matric C:")
+	//printMatrix(C, n)
+	fmt.Println(end.String())
 }
