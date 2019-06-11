@@ -21,6 +21,6 @@ do
 			echo $step_file_content >> execution-$cores-$matrix_size.csv
 		done
 		echo "Sending email"
-		echo $final_message | mutt -s "[TCC][$date][Cores $cores][Matrix $matrix_size] Relatório execução multiplicação de matrizes go" -a execution-$cores-$matrix_size.csv -- joaoluisguio@gmail.com
+		echo $final_message | mutt -s "[TCC][$date][Cores $cores][Matrix $matrix_size] Relatório execução multiplicação de matrizes C" -a execution-$cores-$matrix_size.csv -- joaoluisguio@gmail.com
 	done
 done
