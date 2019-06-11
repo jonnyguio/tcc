@@ -67,5 +67,5 @@ int main(int argc, char *argv[]) {
     }
     auto end = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double, std::milli> dur = end - start;
-    std::cout << "Elapsed in seconds:" << dur.count() / 1000 << std::endl;
+    std::cout << dur.count() / 1000 << std::endl;
 }
