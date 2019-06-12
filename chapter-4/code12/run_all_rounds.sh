@@ -13,7 +13,7 @@ do
 		echo "Step: number of cores is $cores size of matrix is ${matrix_size}x${matrix_size}"
 		final_message="\n\nStep: number of cores is $cores size of matrix is ${matrix_size}x${matrix_size}"
 		echo $step_file_header >> execution-$cores-$matrix_size.csv
-		for step in {1..1000};
+		for step in {1..100};
 		#for step in {1..2};
 		do
 			sample=`./c_matrix $matrix_size $cores`
