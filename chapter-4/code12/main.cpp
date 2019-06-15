@@ -53,14 +53,16 @@ int main(int argc, char *argv[]) {
 		exit(0);		
 	}
     int **A = (int**) malloc(sizeof(int*) * matrix_size);
+    int **B = (int**) malloc(sizeof(int*) * matrix_size);
     int **C = (int**) malloc(sizeof(int*) * matrix_size);
     InitMatrix(A, matrix_size, true);
+    InitMatrix(B, matrix_size, true);
     InitMatrix(C, matrix_size, false);
 
     auto start = std::chrono::high_resolution_clock::now();
     auto ref_threads = new std::thread[matrix_size];
     for (int i = 0; i < threads; i++) {
-        ref_threads[i] = std::thread(MultiplyMatrix, A, A, C, matrix_size, threads, i);
+        ref_threads[i] = std::thread(MultiplyMatrix, A, B, C, matrix_size, threads, i);
     }
     for (int i = 0; i < threads; i++) {
         ref_threads[i].join();
