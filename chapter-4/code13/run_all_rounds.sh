@@ -4,7 +4,7 @@ final_message="Ended execution. Following times:"
 step_file_header="sample_number,cores,matrix_size,time"
 date=`date '+%Y-%m-%d-%X'`
 #for matrix_size in "1000";
-for matrix_size in "100" "1000" "5000" "10000" "25000" "50000" "90000";
+for matrix_size in "100" "1000" "2000" "3000" "4000" "5000";
 do
 	#for cores in {1..2}
 	for cores in "1" "2" "4";
@@ -13,7 +13,7 @@ do
 		echo "Step: number of cores is $cores size of matrix is ${matrix_size}x${matrix_size}"
 		final_message="\n\nStep: number of cores is $cores size of matrix is ${matrix_size}x${matrix_size}"
 		echo $step_file_header >> execution-$cores-$matrix_size.csv
-		for step in {1..100};
+		for step in {1..50};
 		#for step in {1..2};
 		do
 			if [ "$cores" -eq "1" ];

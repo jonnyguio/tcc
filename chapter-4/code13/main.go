@@ -9,7 +9,7 @@ import (
 )
 
 func main() {
-	A, C := MatrixInt{}, MatrixInt{}
+	A, B, C := MatrixInt{}, MatrixInt{}, MatrixInt{}
 	if len(os.Args) < 3 {
 		fmt.Printf("Usage: %s <size of squared matrix> <parallel: true or false>\n", os.Args[0])
 		os.Exit(1)
@@ -26,23 +26,14 @@ func main() {
 	}
 
 	rand.Seed(time.Now().UTC().UnixNano())
-	// fmt.Println(len(A), len(A), len(C))
 
 	A.InitSquared(n, 1000, true)
-	fmt.Println("finished starting A")
+	B.InitSquared(n, 1000, true)
 	C.InitSquared(n, 0, false)
-	fmt.Println("finished starting C")
-
-	/*fmt.Println("Matrix A:")
-	A.Print()
-	fmt.Println("Matrix C:")
-	C.Print()*/
 
 	start := time.Now()
-	A.Multiply(A, C, parallel)
+	A.Multiply(B, C, parallel)
 	end := time.Now().Sub(start)
 
-	/*fmt.Println("Result Matric C:")
-	C.Print()*/
 	fmt.Println(end.String())
 }

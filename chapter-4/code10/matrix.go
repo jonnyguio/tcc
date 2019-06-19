@@ -8,10 +8,10 @@ import (
 
 type MatrixInt [][]int
 
-func (a MatrixInt) Step(b, c MatrixInt, row, col int, wg *sync.WaitGroup) {
+func (a MatrixInt) Step(b, c MatrixInt, i, j int, wg *sync.WaitGroup) {
 	defer wg.Done()
-	for i, j := 0, 0; i < len(a); i, j = i+1, j+1 {
-		c[row][col] += a[row][i] * b[j][col]
+	for k := 0; k < len(a); k++ {
+		c[i][j] += a[i][k] * b[k][j]
 	}
 }
 
@@ -27,7 +27,9 @@ func (a MatrixInt) Multiply(b, c MatrixInt, parallel bool) {
 			}
 		}
 	}
-	wg.Wait()
+	if parallel {
+		wg.Wait()
+	}
 }
 
 func (a *MatrixInt) InitSquared(newSize, maxCell int, fillRandomly bool) {
