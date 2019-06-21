@@ -1,5 +1,5 @@
 #!/bin/bash
-clang++ -lpthread --std=c++11 main.cpp -o c_matrix -Ofast || exit 1;
+clang++ -lpthread --std=c++11 --stdlib=libc++ -Ofast main.cpp -o c_matrix || exit 1;
 final_message="Ended execution. Following times:"
 step_file_header="sample_number,cores,matrix_size,time"
 date=`date '+%Y-%m-%d-%X'`
