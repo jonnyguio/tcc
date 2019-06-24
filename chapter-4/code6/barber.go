@@ -3,12 +3,12 @@ package main
 import (
 	"fmt"
 	"sync"
+	//"time"
 )
 
 type Barber struct {
 	ID         int
 	ReadyToCut chan int
-	empty      bool
 }
 
 func (b *Barber) start(seatsMutex *sync.Mutex, customerReady chan int, seats *int) {
