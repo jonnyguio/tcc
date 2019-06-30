@@ -7,7 +7,7 @@ type Coroutine struct {
 	dead, started bool
 }
 
-func Create(base func(...interface{}) []interface{}) *Coroutine {
+func Create(base func(*Coroutine, ...interface{}) []interface{}) *Coroutine {
 	coro := &Coroutine{
 
 		yield:   make(chan interface{}),
@@ -16,9 +16,9 @@ func Create(base func(...interface{}) []interface{}) *Coroutine {
 		started: false,
 	}
 	coro.base = func(args ...interface{}) []interface{} {
-		rets := base(args)
+		rets := base(coro, args...)
 		coro.dead = true
-		return coro.Yield(rets)
+		return coro.Yield(rets...)
 	}
 	return coro
 }
@@ -28,7 +28,8 @@ func (c *Coroutine) Resume(args ...interface{}) []interface{} {
 		panic("Cannot resume a dead coroutine")
 	}
 	if !c.started {
-		c.base(args)
+		c.started = true
+		go c.base(args...)
 	} else {
 		for _, value := range args {
 			c.resume <- value
@@ -43,14 +44,16 @@ func (c *Coroutine) Resume(args ...interface{}) []interface{} {
 	return list
 }
 
-func (c *Coroutine) Yield(rets ...interface{}) []interface{} {
+func (c *Coroutine) Yield(rets ...interface{}) (list []interface{}) {
 	for _, value := range rets {
 		c.yield <- value
 	}
 	close(c.yield)
-	list := []interface{}{}
-	for newArg := range c.resume {
-		list = append(list, newArg)
+	if len(rets) > 0 {
+		list = []interface{}{}
+		for newArg := range c.resume {
+			list = append(list, newArg)
+		}
 	}
 	c.resume = make(chan interface{})
 	return list
