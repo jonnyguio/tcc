@@ -1,4 +1,4 @@
-package reader
+package main
 
 import (
 	"fmt"
@@ -9,28 +9,24 @@ type Reader struct {
 	ID      int
 	Readers *sync.Mutex
 	Writers *sync.Mutex
+	Count   chan int
 }
-
-var count = 0
-var local = &sync.Mutex{}
 
 func (r *Reader) Start(stream []byte, size int) {
 	for {
 		r.Readers.Lock()
-		local.Lock()
-		count++
-		if count == 1 {
+		count := <-r.Count
+		if count == 0 {
 			r.Writers.Lock()
 		}
-		local.Unlock()
+		r.Count <- count + 1
 		r.Readers.Unlock()
 
 		fmt.Printf("Reader %d read byte string %v\n", r.ID, stream)
-		local.Lock()
-		count--
-		if count == 0 {
+		count = <-r.Count
+		if count == 1 {
 			r.Writers.Unlock()
 		}
-		local.Unlock()
+		r.Count <- count - 1
 	}
 }

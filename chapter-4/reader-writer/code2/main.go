@@ -26,7 +26,8 @@ func main() {
 
 	streamSize := 32
 	stream := make([]byte, streamSize)
-	readers := &sync.Mutex{}
+	readers := make(chan int, 1)
+	readers <- 0
 	writers := &sync.Mutex{}
 
 	for i := 0; i < numWriters; i++ {

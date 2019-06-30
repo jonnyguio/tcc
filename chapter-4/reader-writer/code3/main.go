@@ -5,8 +5,6 @@ import (
 	"os"
 	"strconv"
 	"sync"
-	"tcc-chapter4-readerwriter-code3/reader"
-	"tcc-chapter4-readerwriter-code3/writer"
 	"time"
 )
 
@@ -30,13 +28,17 @@ func main() {
 	stream := make([]byte, streamSize)
 	readers := &sync.Mutex{}
 	writers := &sync.Mutex{}
+	readerCount := make(chan int, 1)
+	readerCount <- 0
+	writerCount := make(chan int, 1)
+	writerCount <- 0
 
 	for i := 0; i < numWriters; i++ {
-		writer := &writer.Writer{ID: i + 1, Readers: readers, Writers: writers}
+		writer := &Writer{ID: i + 1, Readers: readers, Writers: writers, Count: writerCount}
 		go writer.Start(stream, streamSize)
 	}
 	for i := 0; i < numReaders; i++ {
-		reader := &reader.Reader{ID: i + 1, Readers: readers, Writers: writers}
+		reader := &Reader{ID: i + 1, Readers: readers, Writers: writers, Count: readerCount}
 		go reader.Start(stream, streamSize)
 	}
 	time.Sleep(100 * time.Second)

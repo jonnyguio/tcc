@@ -1,4 +1,4 @@
-package writer
+package main
 
 import (
 	"crypto/rand"
@@ -10,29 +10,26 @@ type Writer struct {
 	ID      int
 	Writers *sync.Mutex
 	Readers *sync.Mutex
+	Count   chan int
 }
-
-var local, count = &sync.Mutex{}, 0
 
 func (w *Writer) Start(stream []byte, size int) {
 	for {
-		local.Lock()
-		count++
-		if count == 1 {
+		count := <-w.Count
+		if count == 0 {
 			w.Readers.Lock()
 		}
-		local.Unlock()
+		w.Count <- count + 1
 
 		w.Writers.Lock()
-		fmt.Printf("Writer %d wrinting byte string %v\n", w.ID, stream)
+		fmt.Printf("Writer %d writing byte string %v\n", w.ID, stream)
 		rand.Read(stream)
 		w.Writers.Unlock()
 
-		local.Lock()
-		count--
+		count = <-w.Count
 		if count == 1 {
 			w.Readers.Unlock()
 		}
-		local.Unlock()
+		w.Count <- count - 1
 	}
 }

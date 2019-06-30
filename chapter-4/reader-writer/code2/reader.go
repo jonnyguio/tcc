@@ -7,27 +7,25 @@ import (
 
 type Reader struct {
 	ID      int
-	Readers *sync.Mutex
+	Readers chan int
 	Writers *sync.Mutex
 }
 
-var count = 0
-
 func (r *Reader) start(stream []byte, size int) {
 	for {
-		r.Readers.Lock()
-		count++
-		if count == 1 {
+		count := <-r.Readers
+		if count == 0 {
+			fmt.Printf("Reader %d getting lock\n", r.ID)
 			r.Writers.Lock()
+			fmt.Printf("Reader %d got lock\n", r.ID)
 		}
-		r.Readers.Unlock()
+		r.Readers <- count + 1
 
 		fmt.Printf("Reader %d read byte string %v\n", r.ID, stream)
-		r.Readers.Lock()
-		count--
-		if count == 0 {
+		count = <-r.Readers
+		if count == 1 {
 			r.Writers.Unlock()
 		}
-		r.Readers.Unlock()
+		r.Readers <- count - 1
 	}
 }
