@@ -1,9 +1,8 @@
 package main
 
 import (
-	"sync"
-	"time"
 	"math/rand"
+	"time"
 )
 
 func main() {
@@ -17,14 +16,12 @@ func main() {
 	}
 	barber := &Barber{ID: 1, ReadyToCut: make(chan int)}
 
-	mutex := &sync.Mutex{}
-	seats := new(int)
-	*seats = 5
-	go barber.start(mutex, costumerChannel, seats)
-	for i := 0; i < 100; i++ {
+	seatsCh := make(chan int, 1)
+	seatsCh <- 5
+	go barber.start(costumerChannel, seatsCh)
+	for i := 0; i < 10; i++ {
 		turn := rand.Int() % 10
-		// fmt.Println(costumers[turn].ID)
-		go costumers[turn].start(mutex, barber.ReadyToCut, seats)
+		go costumers[turn].start(barber.ReadyToCut, seatsCh)
 	}
 	time.Sleep(30 * time.Second)
 }
