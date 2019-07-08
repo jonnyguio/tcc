@@ -91,8 +91,7 @@ ggplot(mapping = aes(x = current_dataset$matrix_size,
   geom_line() + 
   geom_errorbar(aes(ymin=current_dataset$min_time, ymax=current_dataset$max_time), width = 100) +
   scale_color_manual(values = colours_cores) +
-  labs(x = "Tamanho da Matriz", y = "Tempo (s)", colour = "Núcleos", title = "Comparacão Go vs C sem otimização")
-
+  labs(x = "Tamanho da Matriz", y = "Tempo (s)", colour = "Linguagem", title = "Comparacão Go vs C++ sem otimização - 4 núcleos")
 
 current_dataset <- c_go_with_branching_comparison
 ggplot(mapping = aes(x = current_dataset$matrix_size,
@@ -102,9 +101,31 @@ ggplot(mapping = aes(x = current_dataset$matrix_size,
   geom_line() + 
   geom_errorbar(aes(ymin=current_dataset$min_time, ymax=current_dataset$max_time), width = 100) +
   scale_color_manual(values = colours_cores) +
-  labs(x = "Tamanho da Matriz", y = "Tempo (s)", colour = "Núcleos", title = "Comparacão Go vs C com otimização")
+  labs(x = "Tamanho da Matriz", y = "Tempo (s)", colour = "Linguagem", title = "Comparacão Go vs C++ com otimização - 4 núcleos")
 
 
+# Comparacões sem error bar
+current_dataset <- c_go_no_branching_comparison
+ggplot(mapping = aes(x = current_dataset$matrix_size,
+                     y = current_dataset$mean_time,
+                     colour = current_dataset$lang)) +
+  geom_point() +
+  geom_line() + 
+  scale_color_manual(values = colours_cores) +
+  labs(x = "Tamanho da Matriz", y = "Tempo (s)", colour = "Linguagem", title = "Comparacão Go vs C++ sem otimização - 4 núcleos")
+
+current_dataset <- c_go_with_branching_comparison
+ggplot(mapping = aes(x = current_dataset$matrix_size,
+                     y = current_dataset$mean_time,
+                     colour = current_dataset$lang)) +
+  geom_point() +
+  geom_line() + 
+  scale_color_manual(values = colours_cores) +
+  labs(x = "Tamanho da Matriz", y = "Tempo (s)", colour = "Linguagem", title = "Comparacão Go vs C++ com otimização - 4 núcleos")
+
+
+################## ANTIGO
+#################
 
 geom_errorbar()
 ggplot(mapping = aes()) +
