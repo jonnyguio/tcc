@@ -3,17 +3,11 @@ library(plyr)
 library(dplyr)
 library(gmodels)
 
-temp = list.files(path = "./go-no-branching/", pattern = "*.csv.fix", full.names = TRUE)
-go_no_branching_dataset = lapply(temp, read.delim, sep = ",")
-go_no_branching_merged_dataset = rbind.fill(go_no_branching_dataset)
 temp = list.files(path = "./go-with-branching/", pattern = "*.csv.fix", full.names = TRUE)
 go_with_branching_dataset = lapply(temp, read.delim, sep = ",")
 go_with_branching_merged_dataset = rbind.fill(go_with_branching_dataset)
 
 
-temp = list.files(path = "./c-no-branching/", pattern = "*.csv", full.names = TRUE)
-c_no_branching_dataset = lapply(temp, read.delim, sep = ",")
-c_no_branching_merged_dataset = rbind.fill(c_no_branching_dataset)
 temp = list.files(path = "./c-with-branching/", pattern = "*.csv", full.names = TRUE)
 c_with_branching_dataset = lapply(temp, read.delim, sep = ",")
 c_with_branching_merged_dataset = rbind.fill(c_with_branching_dataset)
@@ -23,24 +17,28 @@ colours_cores <- c("#990000", "#274e13", "#073763")
 substr(colours_cores, 1, 7)
 colours_cores[1]
 standard_error <- function(x) sd(x)/sqrt(length(x))
-go_no_branching_summary <- go_no_branching_merged_dataset %>%
-  group_by(cores, matrix_size) %>%
-  summarise(mean_time=mean(time), sd_time=sd(time), cv=(sd(time) / mean(time))*100, std_err=standard_error(time), min_time=min(time), max_time=max(time))
+if (FALSE) {
+  go_no_branching_summary <- go_no_branching_merged_dataset %>%
+    group_by(cores, matrix_size) %>%
+    summarise(mean_time=mean(time), sd_time=sd(time), cv=(sd(time) / mean(time))*100, std_err=standard_error(time), min_time=min(time), max_time=max(time))
+}
 go_with_branching_summary <- go_with_branching_merged_dataset %>%
   group_by(cores, matrix_size) %>%
   summarise(mean_time=mean(time), sd_time=sd(time), cv=(sd(time) / mean(time))*100, std_err=standard_error(time), min_time=min(time), max_time=max(time))
-c_no_branching_summary <- c_no_branching_merged_dataset %>%
-  group_by(cores, matrix_size) %>%
-  summarise(mean_time=mean(time), sd_time=sd(time), cv=(sd(time) / mean(time))*100, std_err=standard_error(time), min_time=min(time), max_time=max(time))
+if (FALSE) {
+  c_no_branching_summary <- c_no_branching_merged_dataset %>%
+    group_by(cores, matrix_size) %>%
+    summarise(mean_time=mean(time), sd_time=sd(time), cv=(sd(time) / mean(time))*100, std_err=standard_error(time), min_time=min(time), max_time=max(time))
+}
 c_with_branching_summary <- c_with_branching_merged_dataset %>%
   group_by(cores, matrix_size) %>%
   summarise(mean_time=mean(time), sd_time=sd(time), cv=(sd(time) / mean(time))*100, std_err=standard_error(time), min_time=min(time), max_time=max(time))
 
-c_go_no_branching_comparison = rbind(c_no_branching_summary, go_no_branching_summary)
-c_go_no_branching_comparison$lang = ""
-c_go_no_branching_comparison$lang[1:18] = "C++"
-c_go_no_branching_comparison$lang[19:36] = "Go"
-c_go_no_branching_comparison = c_go_no_branching_comparison[c_go_no_branching_comparison$cores == 4,]
+# c_go_no_branching_comparison = rbind(c_no_branching_summary, go_no_branching_summary)
+# c_go_no_branching_comparison$lang = ""
+# c_go_no_branching_comparison$lang[1:18] = "C++"
+# c_go_no_branching_comparison$lang[19:36] = "Go"
+# c_go_no_branching_comparison = c_go_no_branching_comparison[c_go_no_branching_comparison$cores == 4,]
 
 
 c_go_with_branching_comparison = rbind(c_with_branching_summary, go_with_branching_summary)
@@ -49,7 +47,7 @@ c_go_with_branching_comparison$lang[1:18] = "C++"
 c_go_with_branching_comparison$lang[19:36] = "Go"
 c_go_with_branching_comparison = c_go_with_branching_comparison[c_go_with_branching_comparison$cores == 4,]
 
-
+if (FALSE) {
 ggplot(mapping = aes(x = go_no_branching_summary$matrix_size,
                      y = go_no_branching_summary$mean_time,
                      colour = factor(go_no_branching_summary$cores))) +
@@ -58,6 +56,7 @@ ggplot(mapping = aes(x = go_no_branching_summary$matrix_size,
        geom_errorbar(aes(ymin=go_no_branching_summary$min_time, ymax=go_no_branching_summary$max_time), width = 100) +
        scale_color_manual(values = colours_cores) +
        labs(x = "Tamanho da Matriz", y = "Tempo (s)", colour = "Núcleos")
+}
 
 current_dataset <- go_with_branching_summary
 ggplot(mapping = aes(x = current_dataset$matrix_size,
@@ -69,6 +68,7 @@ ggplot(mapping = aes(x = current_dataset$matrix_size,
   scale_color_manual(values = colours_cores) +
   labs(x = "Tamanho da Matriz", y = "Tempo (s)", colour = "Núcleos")
 
+if (FALSE) {
 current_dataset <- c_no_branching_summary
 ggplot(mapping = aes(x = current_dataset$matrix_size,
                      y = current_dataset$mean_time,
@@ -78,6 +78,7 @@ ggplot(mapping = aes(x = current_dataset$matrix_size,
   geom_errorbar(aes(ymin=current_dataset$min_time, ymax=current_dataset$max_time), width = 100) +
   scale_color_manual(values = colours_cores) +
   labs(x = "Tamanho da Matriz", y = "Tempo (s)", colour = "Núcleos")
+}
 
 current_dataset <- c_with_branching_summary
 ggplot(mapping = aes(x = current_dataset$matrix_size,
@@ -91,6 +92,7 @@ ggplot(mapping = aes(x = current_dataset$matrix_size,
 
 
 # Comparacões
+if (FALSE) {
 current_dataset <- c_go_no_branching_comparison
 ggplot(mapping = aes(x = current_dataset$matrix_size,
                      y = current_dataset$mean_time,
@@ -100,6 +102,7 @@ ggplot(mapping = aes(x = current_dataset$matrix_size,
   geom_errorbar(aes(ymin=current_dataset$min_time, ymax=current_dataset$max_time), width = 100) +
   scale_color_manual(values = colours_cores) +
   labs(x = "Tamanho da Matriz", y = "Tempo (s)", colour = "Linguagem")
+}
 
 current_dataset <- c_go_with_branching_comparison
 ggplot(mapping = aes(x = current_dataset$matrix_size,
@@ -113,6 +116,7 @@ ggplot(mapping = aes(x = current_dataset$matrix_size,
 
 
 # Comparacões sem error bar
+if (FALSE) {
 current_dataset <- c_go_no_branching_comparison
 ggplot(mapping = aes(x = current_dataset$matrix_size,
                      y = current_dataset$mean_time,
@@ -121,6 +125,7 @@ ggplot(mapping = aes(x = current_dataset$matrix_size,
   geom_line() + 
   scale_color_manual(values = colours_cores) +
   labs(x = "Tamanho da Matriz", y = "Tempo (s)", colour = "Linguagem", title = "Comparacão Go vs C++ sem otimização - 4 núcleos")
+}
 
 current_dataset <- c_go_with_branching_comparison
 ggplot(mapping = aes(x = current_dataset$matrix_size,

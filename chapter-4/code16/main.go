@@ -28,7 +28,7 @@ func main() {
 	C.InitSquared(n, 0, false)
 
 	start := time.Now()
-	A.Multiply(B, C, runtime.GOMAXPROCS(0))
+	C.Multiply(A, B, runtime.GOMAXPROCS(0))
 	end := time.Now().Sub(start)
 
 	fmt.Println(end.String())
