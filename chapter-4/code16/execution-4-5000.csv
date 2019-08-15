@@ -1,51 +1,51 @@
 sample_number,cores,matrix_size,time
-1,4,5000,starting 3 starting 1 starting 2 starting 0 1m5.813442525s
-2,4,5000,starting 3 starting 2 starting 0 starting 1 1m3.493222544s
-3,4,5000,starting 3 starting 1 starting 0 starting 2 1m3.726462819s
-4,4,5000,starting 3 starting 1 starting 0 starting 2 1m3.798526794s
-5,4,5000,starting 3 starting 1 starting 2 starting 0 1m5.929616573s
-6,4,5000,starting 3 starting 1 starting 0 starting 2 1m5.217562154s
-7,4,5000,starting 3 starting 1 starting 2 starting 0 1m4.73188994s
-8,4,5000,starting 3 starting 0 starting 1 starting 2 1m6.128346349s
-9,4,5000,starting 3 starting 1 starting 2 starting 0 1m4.489032163s
-10,4,5000,starting 3 starting 1 starting 2 starting 0 1m4.437225381s
-11,4,5000,starting 3 starting 1 starting 0 starting 2 1m6.295094571s
-12,4,5000,starting 3 starting 1 starting 0 starting 2 1m4.013145943s
-13,4,5000,starting 3 starting 2 starting 1 starting 0 1m5.256799824s
-14,4,5000,starting 3 starting 1 starting 0 starting 2 1m3.749142661s
-15,4,5000,starting 3 starting 1 starting 0 starting 2 1m5.650215479s
-16,4,5000,starting 3 starting 2 starting 1 starting 0 1m5.226400526s
-17,4,5000,starting 3 starting 1 starting 2 starting 0 1m5.418907196s
-18,4,5000,starting 3 starting 2 starting 0 starting 1 1m5.577365556s
-19,4,5000,starting 3 starting 0 starting 2 starting 1 1m5.446341714s
-20,4,5000,starting 3 starting 1 starting 0 starting 2 1m5.295041754s
-21,4,5000,starting 3 starting 1 starting 2 starting 0 1m4.002097194s
-22,4,5000,starting 3 starting 2 starting 0 starting 1 1m3.717354245s
-23,4,5000,starting 3 starting 1 starting 0 starting 2 1m5.581691019s
-24,4,5000,starting 3 starting 2 starting 1 starting 0 1m4.676027371s
-25,4,5000,starting 3 starting 1 starting 2 starting 0 1m4.564665413s
-26,4,5000,starting 3 starting 1 starting 0 starting 2 1m5.48346086s
-27,4,5000,starting 3 starting 1 starting 0 starting 2 1m4.815126246s
-28,4,5000,starting 3 starting 1 starting 0 starting 2 1m3.935205183s
-29,4,5000,starting 3 starting 0 starting 1 starting 2 1m3.71020676s
-30,4,5000,starting 3 starting 1 starting 2 starting 0 1m4.361418506s
-31,4,5000,starting 3 starting 1 starting 0 starting 2 1m4.099395759s
-32,4,5000,starting 3 starting 0 starting 2 starting 1 1m6.242384564s
-33,4,5000,starting 3 starting 1 starting 0 starting 2 1m4.923102292s
-34,4,5000,starting 3 starting 1 starting 2 starting 0 1m3.998784894s
-35,4,5000,starting 3 starting 1 starting 2 starting 0 1m5.842187202s
-36,4,5000,starting 3 starting 1 starting 0 starting 2 1m4.826822332s
-37,4,5000,starting 3 starting 2 starting 0 starting 1 1m4.453450703s
-38,4,5000,starting 3 starting 1 starting 0 starting 2 1m3.814191076s
-39,4,5000,starting 3 starting 0 starting 2 starting 1 1m4.26250132s
-40,4,5000,starting 3 starting 1 starting 2 starting 0 1m4.850723476s
-41,4,5000,starting 3 starting 2 starting 0 starting 1 1m3.958166399s
-42,4,5000,starting 3 starting 1 starting 2 starting 0 1m4.677596434s
-43,4,5000,starting 3 starting 1 starting 0 starting 2 1m3.557021698s
-44,4,5000,starting 3 starting 1 starting 0 starting 2 1m6.656228613s
-45,4,5000,starting 3 starting 1 starting 0 starting 2 1m5.267913833s
-46,4,5000,starting 3 starting 1 starting 0 starting 2 1m4.061188991s
-47,4,5000,starting 3 starting 1 starting 2 starting 0 1m5.983817295s
-48,4,5000,starting 3 starting 1 starting 0 starting 2 1m6.806164943s
-49,4,5000,starting 3 starting 1 starting 0 starting 2 1m3.675889384s
-50,4,5000,starting 3 starting 1 starting 2 starting 0 1m3.756618044s
+1,4,5000,1m5.813442525s
+2,4,5000,1m3.493222544s
+3,4,5000,1m3.726462819s
+4,4,5000,1m3.798526794s
+5,4,5000,1m5.929616573s
+6,4,5000,1m5.217562154s
+7,4,5000,1m4.73188994s
+8,4,5000,1m6.128346349s
+9,4,5000,1m4.489032163s
+10,4,5000,1m4.437225381s
+11,4,5000,1m6.295094571s
+12,4,5000,1m4.013145943s
+13,4,5000,1m5.256799824s
+14,4,5000,1m3.749142661s
+15,4,5000,1m5.650215479s
+16,4,5000,1m5.226400526s
+17,4,5000,1m5.418907196s
+18,4,5000,1m5.577365556s
+19,4,5000,1m5.446341714s
+20,4,5000,1m5.295041754s
+21,4,5000,1m4.002097194s
+22,4,5000,1m3.717354245s
+23,4,5000,1m5.581691019s
+24,4,5000,1m4.676027371s
+25,4,5000,1m4.564665413s
+26,4,5000,1m5.48346086s
+27,4,5000,1m4.815126246s
+28,4,5000,1m3.935205183s
+29,4,5000,1m3.71020676s
+30,4,5000,1m4.361418506s
+31,4,5000,1m4.099395759s
+32,4,5000,1m6.242384564s
+33,4,5000,1m4.923102292s
+34,4,5000,1m3.998784894s
+35,4,5000,1m5.842187202s
+36,4,5000,1m4.826822332s
+37,4,5000,1m4.453450703s
+38,4,5000,1m3.814191076s
+39,4,5000,1m4.26250132s
+40,4,5000,1m4.850723476s
+41,4,5000,1m3.958166399s
+42,4,5000,1m4.677596434s
+43,4,5000,1m3.557021698s
+44,4,5000,1m6.656228613s
+45,4,5000,1m5.267913833s
+46,4,5000,1m4.061188991s
+47,4,5000,1m5.983817295s
+48,4,5000,1m6.806164943s
+49,4,5000,1m3.675889384s
+50,4,5000,1m3.756618044s

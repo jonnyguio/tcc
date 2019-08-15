@@ -1,51 +1,51 @@
 sample_number,cores,matrix_size,time
-1,4,100,starting 3 starting 0 starting 1 starting 2 2.686576ms
-2,4,100,starting 3 starting 2 starting 1 starting 0 1.557209ms
-3,4,100,starting 3 starting 0 starting 1 starting 2 1.140197ms
-4,4,100,starting 3 starting 0 starting 1 starting 2 1.97232ms
-5,4,100,starting 3 starting 1 starting 0 starting 2 1.384474ms
-6,4,100,starting 3 starting 2 starting 1 starting 0 1.531202ms
-7,4,100,starting 3 starting 2 starting 1 starting 0 1.520628ms
-8,4,100,starting 2 starting 3 starting 0 starting 1 1.256573ms
-9,4,100,starting 3 starting 0 starting 1 starting 2 1.344293ms
-10,4,100,starting 3 starting 0 starting 1 starting 2 1.414973ms
-11,4,100,starting 3 starting 1 starting 0 starting 2 1.072089ms
-12,4,100,starting 3 starting 0 starting 2 starting 1 966.083µs
-13,4,100,starting 3 starting 0 starting 1 starting 2 1.1382ms
-14,4,100,starting 3 starting 1 starting 0 starting 2 966.602µs
-15,4,100,starting 3 starting 2 starting 0 starting 1 1.151798ms
-16,4,100,starting 3 starting 0 starting 2 starting 1 922.701µs
-17,4,100,starting 3 starting 1 starting 0 starting 2 1.276401ms
-18,4,100,starting 3 starting 0 starting 1 starting 2 1.196251ms
-19,4,100,starting 3 starting 0 starting 2 starting 1 1.347156ms
-20,4,100,starting 3 starting 0 starting 1 starting 2 1.462663ms
-21,4,100,starting 3 starting 0 starting 1 starting 2 1.13499ms
-22,4,100,starting 3 starting 2 starting 0 starting 1 1.171261ms
-23,4,100,starting 3 starting 0 starting 1 starting 2 918.953µs
-24,4,100,starting 3 starting 2 starting 0 starting 1 1.112329ms
-25,4,100,starting 3 starting 0 starting 1 starting 2 831.453µs
-26,4,100,starting 3 starting 2 starting 1 starting 0 899.874µs
-27,4,100,starting 3 starting 0 starting 2 starting 1 957.608µs
-28,4,100,starting 3 starting 2 starting 0 starting 1 1.164401ms
-29,4,100,starting 3 starting 2 starting 0 starting 1 1.070632ms
-30,4,100,starting 3 starting 1 starting 0 starting 2 1.441782ms
-31,4,100,starting 3 starting 0 starting 1 starting 2 1.180795ms
-32,4,100,starting 3 starting 2 starting 0 starting 1 1.269004ms
-33,4,100,starting 3 starting 0 starting 1 starting 2 2.642038ms
-34,4,100,starting 3 starting 0 starting 1 starting 2 1.320052ms
-35,4,100,starting 3 starting 1 starting 0 starting 2 1.241087ms
-36,4,100,starting 2 starting 0 starting 3 starting 1 885.255µs
-37,4,100,starting 3 starting 2 starting 1 starting 0 1.117466ms
-38,4,100,starting 3 starting 2 starting 0 starting 1 1.017299ms
-39,4,100,starting 3 starting 2 starting 1 starting 0 995.54µs
-40,4,100,starting 3 starting 1 starting 2 starting 0 1.068927ms
-41,4,100,starting 3 starting 2 starting 0 starting 1 1.272429ms
-42,4,100,starting 3 starting 1 starting 0 starting 2 932.685µs
-43,4,100,starting 3 starting 0 starting 1 starting 2 2.565993ms
-44,4,100,starting 3 starting 0 starting 1 starting 2 1.217728ms
-45,4,100,starting 2 starting 0 starting 3 starting 1 1.215344ms
-46,4,100,starting 3 starting 1 starting 0 starting 2 1.032838ms
-47,4,100,starting 3 starting 0 starting 1 starting 2 1.010768ms
-48,4,100,starting 3 starting 2 starting 1 starting 0 1.053999ms
-49,4,100,starting 3 starting 2 starting 0 starting 1 1.037925ms
-50,4,100,starting 1 starting 2 starting 3 starting 0 1.078857ms
+1,4,100,2.686576ms
+2,4,100,1.557209ms
+3,4,100,1.140197ms
+4,4,100,1.97232ms
+5,4,100,1.384474ms
+6,4,100,1.531202ms
+7,4,100,1.520628ms
+8,4,100,1.256573ms
+9,4,100,1.344293ms
+10,4,100,1.414973ms
+11,4,100,1.072089ms
+12,4,100,966.083µs
+13,4,100,1.1382ms
+14,4,100,966.602µs
+15,4,100,1.151798ms
+16,4,100,922.701µs
+17,4,100,1.276401ms
+18,4,100,1.196251ms
+19,4,100,1.347156ms
+20,4,100,1.462663ms
+21,4,100,1.13499ms
+22,4,100,1.171261ms
+23,4,100,918.953µs
+24,4,100,1.112329ms
+25,4,100,831.453µs
+26,4,100,899.874µs
+27,4,100,957.608µs
+28,4,100,1.164401ms
+29,4,100,1.070632ms
+30,4,100,1.441782ms
+31,4,100,1.180795ms
+32,4,100,1.269004ms
+33,4,100,2.642038ms
+34,4,100,1.320052ms
+35,4,100,1.241087ms
+36,4,100,885.255µs
+37,4,100,1.117466ms
+38,4,100,1.017299ms
+39,4,100,995.54µs
+40,4,100,1.068927ms
+41,4,100,1.272429ms
+42,4,100,932.685µs
+43,4,100,2.565993ms
+44,4,100,1.217728ms
+45,4,100,1.215344ms
+46,4,100,1.032838ms
+47,4,100,1.010768ms
+48,4,100,1.053999ms
+49,4,100,1.037925ms
+50,4,100,1.078857ms

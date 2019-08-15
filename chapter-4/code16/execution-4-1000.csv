@@ -1,51 +1,51 @@
 sample_number,cores,matrix_size,time
-1,4,1000,starting 3 starting 0 starting 1 starting 2 636.055489ms
-2,4,1000,starting 3 starting 2 starting 1 starting 0 568.064407ms
-3,4,1000,starting 3 starting 2 starting 0 starting 1 590.968898ms
-4,4,1000,starting 3 starting 1 starting 2 starting 0 592.698532ms
-5,4,1000,starting 3 starting 2 starting 1 starting 0 541.065122ms
-6,4,1000,starting 3 starting 2 starting 1 starting 0 590.045119ms
-7,4,1000,starting 3 starting 1 starting 2 starting 0 587.76331ms
-8,4,1000,starting 3 starting 0 starting 2 starting 1 592.605605ms
-9,4,1000,starting 3 starting 1 starting 0 starting 2 562.562914ms
-10,4,1000,starting 1 starting 2 starting 0 starting 3 530.99062ms
-11,4,1000,starting 3 starting 0 starting 1 starting 2 523.577346ms
-12,4,1000,starting 2 starting 0 starting 1 starting 3 594.191073ms
-13,4,1000,starting 3 starting 2 starting 0 starting 1 592.60518ms
-14,4,1000,starting 3 starting 0 starting 2 starting 1 546.151496ms
-15,4,1000,starting 3 starting 1 starting 0 starting 2 579.726134ms
-16,4,1000,starting 1 starting 0 starting 2 starting 3 573.045815ms
-17,4,1000,starting 3 starting 1 starting 2 starting 0 600.770483ms
-18,4,1000,starting 3 starting 2 starting 0 starting 1 583.606616ms
-19,4,1000,starting 3 starting 2 starting 1 starting 0 583.154386ms
-20,4,1000,starting 3 starting 2 starting 1 starting 0 581.397502ms
-21,4,1000,starting 3 starting 2 starting 0 starting 1 540.316929ms
-22,4,1000,starting 3 starting 1 starting 0 starting 2 593.778418ms
-23,4,1000,starting 3 starting 2 starting 1 starting 0 587.949148ms
-24,4,1000,starting 3 starting 2 starting 0 starting 1 599.19042ms
-25,4,1000,starting 3 starting 2 starting 0 starting 1 588.289113ms
-26,4,1000,starting 3 starting 1 starting 0 starting 2 549.726792ms
-27,4,1000,starting 3 starting 1 starting 2 starting 0 561.985655ms
-28,4,1000,starting 3 starting 1 starting 0 starting 2 565.805467ms
-29,4,1000,starting 3 starting 0 starting 2 starting 1 588.907003ms
-30,4,1000,starting 3 starting 1 starting 2 starting 0 580.715752ms
-31,4,1000,starting 3 starting 1 starting 0 starting 2 585.026828ms
-32,4,1000,starting 3 starting 1 starting 2 starting 0 580.607439ms
-33,4,1000,starting 3 starting 2 starting 0 starting 1 570.85623ms
-34,4,1000,starting 3 starting 2 starting 0 starting 1 572.523255ms
-35,4,1000,starting 3 starting 1 starting 0 starting 2 570.070599ms
-36,4,1000,starting 3 starting 2 starting 0 starting 1 578.717922ms
-37,4,1000,starting 3 starting 2 starting 0 starting 1 587.960359ms
-38,4,1000,starting 3 starting 0 starting 1 starting 2 536.918351ms
-39,4,1000,starting 3 starting 2 starting 0 starting 1 589.311159ms
-40,4,1000,starting 3 starting 1 starting 2 starting 0 581.812693ms
-41,4,1000,starting 3 starting 2 starting 1 starting 0 552.292794ms
-42,4,1000,starting 3 starting 2 starting 0 starting 1 554.023058ms
-43,4,1000,starting 3 starting 2 starting 1 starting 0 587.917334ms
-44,4,1000,starting 3 starting 1 starting 0 starting 2 541.546722ms
-45,4,1000,starting 3 starting 2 starting 0 starting 1 590.336963ms
-46,4,1000,starting 3 starting 1 starting 2 starting 0 588.8247ms
-47,4,1000,starting 3 starting 1 starting 2 starting 0 576.302128ms
-48,4,1000,starting 2 starting 0 starting 1 starting 3 599.713482ms
-49,4,1000,starting 3 starting 1 starting 0 starting 2 588.593017ms
-50,4,1000,starting 3 starting 1 starting 0 starting 2 556.666293ms
+1,4,1000,636.055489ms
+2,4,1000,568.064407ms
+3,4,1000,590.968898ms
+4,4,1000,592.698532ms
+5,4,1000,541.065122ms
+6,4,1000,590.045119ms
+7,4,1000,587.76331ms
+8,4,1000,592.605605ms
+9,4,1000,562.562914ms
+10,4,1000,530.99062ms
+11,4,1000,523.577346ms
+12,4,1000,594.191073ms
+13,4,1000,592.60518ms
+14,4,1000,546.151496ms
+15,4,1000,579.726134ms
+16,4,1000,573.045815ms
+17,4,1000,600.770483ms
+18,4,1000,583.606616ms
+19,4,1000,583.154386ms
+20,4,1000,581.397502ms
+21,4,1000,540.316929ms
+22,4,1000,593.778418ms
+23,4,1000,587.949148ms
+24,4,1000,599.19042ms
+25,4,1000,588.289113ms
+26,4,1000,549.726792ms
+27,4,1000,561.985655ms
+28,4,1000,565.805467ms
+29,4,1000,588.907003ms
+30,4,1000,580.715752ms
+31,4,1000,585.026828ms
+32,4,1000,580.607439ms
+33,4,1000,570.85623ms
+34,4,1000,572.523255ms
+35,4,1000,570.070599ms
+36,4,1000,578.717922ms
+37,4,1000,587.960359ms
+38,4,1000,536.918351ms
+39,4,1000,589.311159ms
+40,4,1000,581.812693ms
+41,4,1000,552.292794ms
+42,4,1000,554.023058ms
+43,4,1000,587.917334ms
+44,4,1000,541.546722ms
+45,4,1000,590.336963ms
+46,4,1000,588.8247ms
+47,4,1000,576.302128ms
+48,4,1000,599.713482ms
+49,4,1000,588.593017ms
+50,4,1000,556.666293ms
