@@ -7,7 +7,7 @@ date=`date '+%Y-%m-%d-%X'`
 for matrix_size in "100" "1000" "2000" "3000" "4000" "5000";
 do
 	#for cores in {1..2}
-	for cores in "1";
+	for cores in "1" "2" "4";
 	do
 		rm execution-$cores-$matrix_size.csv
 		echo "Step: number of cores is $cores size of matrix is ${matrix_size}x${matrix_size}"

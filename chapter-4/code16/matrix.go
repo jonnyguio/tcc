@@ -10,9 +10,8 @@ type MatrixInt [][]int
 
 func (c MatrixInt) Step(a, b MatrixInt, id, nthreads int, wg *sync.WaitGroup) {
 	defer wg.Done()
-	fmt.Println("starting", id)
-	for i := 0; i < len(a); i++ {
-		for k := id; k < len(a[0]); k += nthreads {
+	for i := id; i < len(a); i += nthreads {
+		for k := 0; k < len(a[0]); k++ {
 			for j := 0; j < len(a[0]); j++ {
 				c[i][j] += a[i][k] * b[k][j]
 			}

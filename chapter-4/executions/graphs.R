@@ -7,13 +7,15 @@ temp = list.files(path = "./go-with-branching/", pattern = "*.csv.fix", full.nam
 go_with_branching_dataset = lapply(temp, read.delim, sep = ",")
 go_with_branching_merged_dataset = rbind.fill(go_with_branching_dataset)
 
-
 temp = list.files(path = "./c-with-branching/", pattern = "*.csv", full.names = TRUE)
 c_with_branching_dataset = lapply(temp, read.delim, sep = ",")
 c_with_branching_merged_dataset = rbind.fill(c_with_branching_dataset)
 
-colours_cores <- c("#990000", "#274e13", "#073763")
+temp = list.files(path = "./go-cpp-algorithm/", pattern = "*.csv.fix", full.names = TRUE)
+go_cpp_branching_dataset = lapply(temp, read.delim, sep = ",")
+go_cpp_branching_merged_dataset = rbind.fill(go_cpp_branching_dataset)
 
+colours_cores <- c("#990000", "#274e13", "#073763")
 substr(colours_cores, 1, 7)
 colours_cores[1]
 standard_error <- function(x) sd(x)/sqrt(length(x))
@@ -34,6 +36,10 @@ c_with_branching_summary <- c_with_branching_merged_dataset %>%
   group_by(cores, matrix_size) %>%
   summarise(mean_time=mean(time), sd_time=sd(time), cv=(sd(time) / mean(time))*100, std_err=standard_error(time), min_time=min(time), max_time=max(time))
 
+go_cpp_branching_summary <- go_cpp_branching_merged_dataset %>%
+  group_by(cores, matrix_size) %>%
+  summarise(mean_time=mean(time), sd_time=sd(time), cv=(sd(time) / mean(time))*100, std_err=standard_error(time), min_time=min(time), max_time=max(time))
+
 # c_go_no_branching_comparison = rbind(c_no_branching_summary, go_no_branching_summary)
 # c_go_no_branching_comparison$lang = ""
 # c_go_no_branching_comparison$lang[1:18] = "C++"
@@ -46,6 +52,13 @@ c_go_with_branching_comparison$lang = ""
 c_go_with_branching_comparison$lang[1:18] = "C++"
 c_go_with_branching_comparison$lang[19:36] = "Go"
 c_go_with_branching_comparison = c_go_with_branching_comparison[c_go_with_branching_comparison$cores == 4,]
+
+c_go_same_algorithm_comparison = rbind(c_with_branching_summary, go_cpp_branching_summary)
+c_go_same_algorithm_comparison$lang = ""
+c_go_same_algorithm_comparison$lang[1:18] = "C++"
+c_go_same_algorithm_comparison$lang[19:36] = "Go"
+c_go_same_algorithm_comparison = c_go_same_algorithm_comparison[c_go_same_algorithm_comparison$cores == 4,]
+
 
 if (FALSE) {
 ggplot(mapping = aes(x = go_no_branching_summary$matrix_size,
@@ -90,6 +103,15 @@ ggplot(mapping = aes(x = current_dataset$matrix_size,
   scale_color_manual(values = colours_cores) +
   labs(x = "Tamanho da Matriz", y = "Tempo (s)", colour = "Núcleos")
 
+current_dataset <- go_cpp_branching_summary
+ggplot(mapping = aes(x = current_dataset$matrix_size,
+                     y = current_dataset$mean_time,
+                     colour = factor(current_dataset$cores))) +
+  geom_point() +
+  geom_line() + 
+  geom_errorbar(aes(ymin=current_dataset$min_time, ymax=current_dataset$max_time), width = 100) +
+  scale_color_manual(values = colours_cores) +
+  labs(x = "Tamanho da Matriz", y = "Tempo (s)", colour = "Núcleos")
 
 # Comparacões
 if (FALSE) {
@@ -105,6 +127,17 @@ ggplot(mapping = aes(x = current_dataset$matrix_size,
 }
 
 current_dataset <- c_go_with_branching_comparison
+ggplot(mapping = aes(x = current_dataset$matrix_size,
+                     y = current_dataset$mean_time,
+                     colour = current_dataset$lang)) +
+  geom_point() +
+  geom_line() + 
+  geom_errorbar(aes(ymin=current_dataset$min_time, ymax=current_dataset$max_time), width = 100) +
+  scale_color_manual(values = colours_cores) +
+  labs(x = "Tamanho da Matriz", y = "Tempo (s)", colour = "Linguagem")
+
+
+current_dataset <- c_go_same_algorithm_comparison
 ggplot(mapping = aes(x = current_dataset$matrix_size,
                      y = current_dataset$mean_time,
                      colour = current_dataset$lang)) +
